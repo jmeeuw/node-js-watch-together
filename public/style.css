@@ -1,3 +1,7 @@
+@color__default: rgba(0,0,0,.2);
+@color__hover: rgba(0,0,0,.3);
+@color__active: rgba(0,0,0,.5);
+
 #slider {
   width: 100%;
   display: inline-block;
@@ -6,9 +10,71 @@
   text-align: center;
 }
 h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "monospace";
 }
 body {
-  background-color: dimgrey;
+  background-color: #1d2026;
+}
+
+.buttonplay:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(28, 190, 131, 1);
+  background-position: -100% 100%;
+}
+
+.buttonplay {
+  display: inline-block;
+
+  font: normal normal 300 1.3em "monospace";
+  text-decoration: none;
+  font-family: monospace;
+
+  color: black;
+  brackground-color: transparent;
+  border: 1px solid black;
+  border-radius: 100px;
+
+  padding: 0.3em 1.2em;
+  margin: 5px;
+
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    transparent 50%,
+    rgba(28, 190, 131, 1) 50%
+  );
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
+    color 0.5s ease 0s, background-color 0.5s ease;
+}
+
+.buttonpause:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: darkorange;
+  background-position: -100% 100%;
+}
+
+.buttonpause {
+  display: inline-block;
+
+  font: normal normal 300 1.3em "monospace";
+  text-decoration: none;
+  font-family: monospace;
+
+  color: black;
+  brackground-color: transparent;
+  border: 1px solid black;
+  border-radius: 100px;
+
+  padding: 0.3em 1.2em;
+  margin: 5px;
+
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, transparent 50%, darkorange 50%);
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
+    color 0.5s ease 0s, background-color 0.5s ease;
+}
+
+.buttonContainer {
+  margin-top: 50px;
+  text-align: center;
 }

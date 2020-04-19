@@ -41,6 +41,7 @@ function playVideo() {
     newID.valueOf() != "" &&
     newID.valueOf() !== oldID.valueOf()
   ) {
+    socket.emit("load", newID);
     player.loadVideoById(newID);
   }
   socket.emit("play");
@@ -85,4 +86,8 @@ socket.on("pause", () => {
 
 socket.on("slider", (data) => {
   slider.value = data;
+});
+
+socket.on("load", (data) => {
+  player.loadVideoById(data);
 });

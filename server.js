@@ -10,6 +10,8 @@ const server = app.listen(port, () => {
   console.log(`Example app listening at ${port}`);
 });
 
+console.log();
+
 // setup sockets
 const io = socket(server);
 

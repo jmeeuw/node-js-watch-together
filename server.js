@@ -30,4 +30,7 @@ io.on("connection", (socket) => {
   socket.on("slider", (data) => {
     socket.broadcast.emit("slider", data);
   });
+  socket.on("load", (data) => {
+    socket.broadcast.emit("load", data);
+  });
 });

@@ -8,6 +8,9 @@ let pauseButton = buttons[1];
 // slider
 let slider = document.getElementById("slider");
 
+//videoIdInput
+let videoId = document.getElementById("videoId");
+
 // pause and play event listener added
 playButton.addEventListener("click", playVideo);
 pauseButton.addEventListener("click", pauseVideo);
@@ -31,6 +34,16 @@ function onYouTubeIframeAPIReady() {
 
 // play event added
 function playVideo() {
+  var newID = new String(videoId.value);
+  var oldID = new String(player.getVideoData()["video_id"]);
+  if (
+    newID.valueOf() != undefined &&
+    newID.valueOf() != "" &&
+    newID.valueOf() !== oldID.valueOf()
+  ) {
+    socket.emit("load", newID);
+    player.loadVideoById(newID);
+  }
   socket.emit("play");
   player.playVideo();
   setInterval(() => {
@@ -73,4 +86,8 @@ socket.on("pause", () => {
 
 socket.on("slider", (data) => {
   slider.value = data;
+});
+
+socket.on("load", (data) => {
+  player.loadVideoById(data);
 });

@@ -1,4 +1,5 @@
-let socket = io.connect("https://watch-together-now.herokuapp.com");
+const port = process.env.PORT || 3000;
+let socket = io.connect(`https://watch-together-now.herokuapp.com:${port}`);
 
 // Extracted buttons
 let buttons = document.getElementsByTagName("button");

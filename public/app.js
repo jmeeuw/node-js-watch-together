@@ -1,4 +1,4 @@
-let socket = io.connect("http://localhost:3000");
+let socket = io.connect("https://watch-together-now.herokuapp.com");
 
 // Extracted buttons
 let buttons = document.getElementsByTagName("button");
